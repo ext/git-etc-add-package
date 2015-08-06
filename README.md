@@ -7,9 +7,9 @@ help to prepare one commit per updated package after updating your system.
 
 It assumes /etc is already under version control.
 
-  git etc-add-package FILENAME
-  git diff --cached
-  git commit
+    git etc-add-package FILENAME
+    git diff --cached
+    git commit
 
 The script will automatically find all other files belonging to the same package
 and stage all for commit. Inspect the changes using `diff --cached` and then
