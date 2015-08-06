@@ -77,7 +77,7 @@ case "$cmd" in
 		fi
 
 		# prepare a predefined commit message
-		echo -e "#The following package was added:\n\n$package" | tee $(dotgit PACKAGE_MSG)
+		echo -e "# The following package was added:\n\n$package" | tee $(dotgit PACKAGE_MSG)
 
 		# add all files in /etc belonging to this package
 		echo "Finding all files in /etc"
