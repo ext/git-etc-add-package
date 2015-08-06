@@ -75,9 +75,10 @@ case "$cmd" in
 			echo "not found"
 			exit 1
 		fi
+		echo $package
 
 		# prepare a predefined commit message
-		echo -e "# The following package was added:\n\n$package" | tee $(dotgit PACKAGE_MSG)
+		echo -e "# The following package was added:\n\n$package" > $(dotgit PACKAGE_MSG)
 
 		# add all files in /etc belonging to this package
 		echo "Finding all files in /etc"
