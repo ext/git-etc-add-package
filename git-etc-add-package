@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [[ $# != 1 ]]; then
+	echo "for a given file, find the ebuild it belongs to and add all files for that ebuild"
+	echo "usage: git etc-add-package FILENAME"
+	exit 1
+fi
+
+echo -n "Searching for package .. "
+package=$(equery -qC belongs -e "$@")
+if [[ $? != 0 ]]; then
+	echo "not found"
+	exit 1
+fi
+
+echo $package | tee $(git rev-parse --show-toplevel)/.git/COMMIT_EDITMSG
+
+echo "Finding all files in /etc"
+equery files -f obj,sym "$package" | grep '^/etc' | \
+	while read line; do
+		echo $line
+		git add $line
+	done
