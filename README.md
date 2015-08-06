@@ -14,3 +14,7 @@ It assumes /etc is already under version control.
 The script will automatically find all other files belonging to the same package
 and stage all for commit. Inspect the changes using `diff --cached` and then
 `git commit` as usual.
+
+## Install
+
+Put the script somewhere in your path, e.g. `/usr/local/bin`.
