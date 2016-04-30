@@ -60,17 +60,27 @@ gitignore(){
 *~
 .keep*
 
-/csh.env
-/env.d
-/ld.so.cache
-/portage/savedconfig
-/profile.env
-/udev/hwdb.bin
+/.pwd.lock
 /blkid.tab
 /blkid.tab.old
+/csh.env
+/dhcpcd.duid
+/env.d
+/group-
+/gshadow
+/gshadow-
+/ld.so.cache
 /machine-id
 /mtab
 /mtab.fuselock
+/passwd-
+/portage/savedconfig
+/profile.env
+/shadow
+/shadow-
+/ssh/ssh_host_*_key
+/ssh/ssh_host_key
+/udev/hwdb.bin
 EOF
 }
 
